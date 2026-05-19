@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目名称</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #fff;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        main {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4ecdc4;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #45b7aa;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            border-radius: 8px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>项目名称</h1>
+            <p class="subtitle">一句话描述你的项目</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2>项目简介</h2>
+                <p>这里是项目的详细介绍。说明你的项目解决了什么问题，为什么重要。</p>
+            </section>
+
+            <section class="section">
+                <h2>主要功能</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>功能一</h3>
+                        <p>描述第一个核心功能，以及它如何帮助用户。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>功能二</h3>
+                        <p>描述第二个核心功能，突出独特优势。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>功能三</h3>
+                        <p>描述第三个核心功能，展示价值主张。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>开始使用</h2>
+                <p>简单的说明如何开始使用你的项目。</p>
+                <a href="#" class="cta-button">立即体验</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 项目名称. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // 基础交互
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('页面加载完成');
+
+            // 示例：平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // 示例：按钮点击反馈
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('感谢你的关注！');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
